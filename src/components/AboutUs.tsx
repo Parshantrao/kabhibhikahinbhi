@@ -5,18 +5,18 @@ const AboutUs = () => {
   const features = [
     {
       icon: <Users className="w-8 h-8 text-blue-600" />,
-      title: "Local Experts",
-      description: "Born and raised locals who know every hidden gem and authentic experience"
+      title: "Customization Expert",
+      description: "From “let’s go” to “wow,” every detail is made just for you. We match your mood, style, and pace."
     },
     {
       icon: <MapPin className="w-8 h-8 text-blue-600" />,
-      title: "Unique Destinations",
-      description: "Discover secret spots and attractions that only locals know about"
+      title: "Location Expert",
+      description: "Vibes over views — we choose places that feel good, not just look good."
     },
     {
       icon: <Star className="w-8 h-8 text-blue-600" />,
       title: "Group Adventures",
-      description: "Join exciting group activities and games that create lasting memories"
+      description: "From awkward hellos to unforgettable memories — vibe with strangers."
     },
     {
       icon: <Camera className="w-8 h-8 text-blue-600" />,
@@ -30,11 +30,10 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Why Choose Us?
+            Smart Travellers Pick Us — Here's Why?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're not just tour guides - we're your local friends who are passionate about sharing 
-            the authentic beauty and culture of our homeland with visitors from around the world.
+            Kabhi Bhi Kahin Bhi is not just a travel partner. We provide safety with our premium service in an affordable price option. This isn’t just work — it’s pure joy watching you find yours.
           </p>
         </div>
 
@@ -55,12 +54,12 @@ const AboutUs = () => {
             <div>
               <h3 className="text-3xl font-bold mb-6">Our Story</h3>
               <p className="text-blue-100 mb-4">
-                Born from a passion for sharing our beautiful homeland, we started as a small group 
+                Born from a passion for sharing our beautiful homeland, we started as a small group
                 of local friends who loved showing visitors the real India beyond the tourist trails.
               </p>
               <p className="text-blue-100 mb-6">
-                Today, we're proud to offer authentic experiences that connect travelers with local 
-                culture, breathtaking landscapes, and unforgettable adventures across Rajasthan, 
+                Today, we're proud to offer authentic experiences that connect travelers with local
+                culture, breathtaking landscapes, and unforgettable adventures across Rajasthan,
                 Himachal Pradesh, Kashmir, and beyond.
               </p>
               <div className="flex space-x-8">
@@ -79,7 +78,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=4752&q=80"
                 alt="Local guides with camels"
                 className="rounded-xl shadow-2xl"

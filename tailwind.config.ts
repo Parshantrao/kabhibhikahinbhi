@@ -17,7 +17,11 @@ export default {
 				'2xl': '1400px'
 			}
 		},
+
 		extend: {
+			fontFamily: {
+				poppins: ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -91,6 +95,15 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
+	},
+	animation: {
+		'fade-in': 'fadeIn 1s ease-out both',
+	},
+	keyframes: {
+		fadeIn: {
+			'0%': { opacity: 0 },
+			'100%': { opacity: 1 },
+		},
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;

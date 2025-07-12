@@ -12,6 +12,11 @@ import imgHimch4 from '../assets/images/himch4.jpeg';
 import imgUttr1 from '../assets/images/uttr1.jpeg';
 import imgUttr2 from '../assets/images/uttr2.jpeg';
 import imgUttr3 from '../assets/images/uttr3.jpeg';
+
+import RajasthanPkg from '../assets/Rajasthan tour packages.png'
+import UttrakhandPkg from '../assets/Uttarakhand tour packages.png'
+import HimachalPkg from '../assets/Himanchal Pradesh tour packages.png'
+
 // import imgUttr4 from '../assets/images/uttr4.HEIC';
 // import imgIMG2167 from '../assets/images/IMG_2167.HEIC';
 // import imgIMG2168 from '../assets/images/IMG_2168.HEIC';
@@ -22,27 +27,29 @@ const ImageGallery = () => {
   const [showAll, setShowAll] = useState(false);
 
   const images = [
-    { id: 1, src: imgDSCN1223, category: 'rajasthan', title: 'DSCN1223', location: 'Rajasthan' },
-    { id: 2, src: imgLaxmangarh, category: 'rajasthan', title: 'Laxmangarh', location: 'Rajasthan' },
-    { id: 3, src: imgSunset, category: 'rajasthan', title: 'Sunset', location: 'Rajasthan' },
-    { id: 4, src: imgRj1, category: 'rajasthan', title: 'RJ1', location: 'Rajasthan' },
-    { id: 5, src: imgChirag, category: 'himachal', title: 'Chirag', location: 'Himachal Pradesh' },
-    { id: 6, src: imgInditales, category: 'rajasthan', title: 'Jhunjhunu Shekhawati', location: 'Rajasthan' },
-    { id: 7, src: imgHimch1, category: 'himachal', title: 'Himch 1', location: 'Himachal Pradesh' },
-    { id: 8, src: imgHimch2, category: 'himachal', title: 'Himch 2', location: 'Himachal Pradesh' },
-    { id: 9, src: imgHimch3, category: 'himachal', title: 'Himch 3', location: 'Himachal Pradesh' },
-    { id: 10, src: imgHimch4, category: 'himachal', title: 'Himch 4', location: 'Himachal Pradesh' },
-    { id: 11, src: imgUttr1, category: 'uttarakhand', title: 'Uttr 1', location: 'Uttarakhand' },
-    { id: 12, src: imgUttr2, category: 'uttarakhand', title: 'Uttr 2', location: 'Uttarakhand' },
-    { id: 13, src: imgUttr3, category: 'uttarakhand', title: 'Uttr 3', location: 'Uttarakhand' },
+    // { id: 1, src: imgDSCN1223, category: 'rajasthan', title: 'DSCN1223', location: 'Rajasthan' },
+    // { id: 2, src: imgLaxmangarh, category: 'rajasthan', title: 'Laxmangarh', location: 'Rajasthan' },
+    // { id: 3, src: imgSunset, category: 'rajasthan', title: 'Sunset', location: 'Rajasthan' },
+    // { id: 4, src: imgRj1, category: 'rajasthan', title: 'RJ1', location: 'Rajasthan' },
+    // { id: 5, src: imgChirag, category: 'himachal', title: 'Chirag', location: 'Himachal Pradesh' },
+    // { id: 6, src: imgInditales, category: 'rajasthan', title: 'Jhunjhunu Shekhawati', location: 'Rajasthan' },
+    // { id: 7, src: imgHimch1, category: 'himachal', title: 'Himch 1', location: 'Himachal Pradesh' },
+    // { id: 8, src: imgHimch2, category: 'himachal', title: 'Himch 2', location: 'Himachal Pradesh' },
+    // { id: 9, src: imgHimch3, category: 'himachal', title: 'Himch 3', location: 'Himachal Pradesh' },
+    // { id: 10, src: imgHimch4, category: 'himachal', title: 'Himch 4', location: 'Himachal Pradesh' },
+    // { id: 11, src: imgUttr1, category: 'uttarakhand', title: 'Uttr 1', location: 'Uttarakhand' },
+    // { id: 12, src: imgUttr2, category: 'uttarakhand', title: 'Uttr 2', location: 'Uttarakhand' },
+    // { id: 13, src: imgUttr3, category: 'uttarakhand', title: 'Uttr 3', location: 'Uttarakhand' },
+  { id: 11, src: RajasthanPkg, category: 'uttarakhand', title: 'View Packages', location: 'Jaipur | Jodhpur | Jaisalmer | Udaipur | Others' },
+{ id: 12, src: UttrakhandPkg, category: 'uttarakhand', title: 'View Packages', location: 'Mussoorie | Rishikesh | Valley of Flowers | Chopta | Chakrata | Others' },
+{ id: 13, src: HimachalPkg, category: 'uttarakhand', title: 'View Packages', location: 'Jibhi | Shimla | Bir Billing | Dalhousie | McLeod Ganj | Spiti | Others' },
+
 
   ];
 
   const categories = [
-    { id: "all", name: "All Destinations" },
-    { id: "rajasthan", name: "Rajasthan" },
-    { id: "himachal", name: "Himachal Pradesh" },
-    { id: "uttarakhand", name: "Uttarakhand" },
+    { id: "all", name: "Destinations" },
+    { id: "rajasthan", name: "Add your Destination" },
     // { id: "wildlife", name: "Wildlife" }
   ];
 
@@ -88,7 +95,7 @@ const ImageGallery = () => {
               <img
                 src={image.src}
                 alt={image.title}
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                className="w-full h-64 object-fit group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">

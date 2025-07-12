@@ -19,7 +19,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/kabhibhi_kahinbhi/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-500 transition-colors"
@@ -27,7 +27,7 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="https://youtube.com" 
+                href="https://www.youtube.com/@Kabhibhi_Kahinbhi" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
@@ -65,15 +65,15 @@ const Footer = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="flex items-center space-x-3">
               <MapPin className="w-5 h-5 text-blue-500" />
-              <span className="text-gray-400">India (Rajasthan, Himachal, Uttarakhand)</span>
+              <span className="text-gray-400">India (Gurgaon, Jhunjhunu)</span>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="w-5 h-5 text-blue-500" />
-              <span className="text-gray-400">+91 98765 43210</span>
+              <span className="text-gray-400">+91 9636410155, +91 9211342155</span>
             </div>
             <div className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-blue-500" />
-              <span className="text-gray-400">info@kabhibhikahibhi.com</span>
+              <span className="text-gray-400">support@kabhibhikahibhi.com</span>
             </div>
           </div>
         </div>

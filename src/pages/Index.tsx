@@ -11,8 +11,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Hero />
-      <AboutUs />
       <ImageGallery />
+      <AboutUs />
       <Testimonials />
       <QueryForm />
       <Footer />

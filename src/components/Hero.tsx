@@ -23,7 +23,7 @@ const Hero = () => {
         allowTouchMove={false}
         className="absolute inset-0 z-0 pointer-events-none"
       >
-        {[img1, img2, img4].map((img, idx) => (
+        {[img2, img4].map((img, idx) => (
           <SwiperSlide key={idx}>
             <img
               src={img}
@@ -41,10 +41,10 @@ const Hero = () => {
       <nav className="absolute top-0 left-0 right-0 px-6 py-4 z-30">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
-              <span className="text-blue-900 font-bold text-xl">TR</span>
+            <div className="w-12 h-12 rounded-full flex items-center justify-center shadow-md">
+              <img src="/logo1.png" alt="Logo" className="w-10 h-10" />
             </div>
-            <span className="text-white font-semibold text-xl tracking-wide">Kabhi Bhi Kahi Bhi</span>
+            <span className="text-white font-semibold text-xl tracking-wide">Sktti Tours & Travels</span>
           </div>
 
           {/* Desktop Menu */}
@@ -80,19 +80,19 @@ const Hero = () => {
       {/* ===== Hero Content ===== */}
       <div className="relative z-20 flex items-center justify-center h-full px-4">
         <div className="text-center max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
-            Discover the Magic of <br />
-            <span className="text-yellow-400">Incredible India</span>
+          <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 drop-shadow-xl font-poppins animate-fade-in">
+            Kabhi Bhi Kahin Bhi
           </h1>
+
           <p className="text-lg md:text-2xl text-blue-100 mb-8 drop-shadow">
-            From majestic mountains to spiritual rivers, immerse yourself in timeless adventures and vibrant culture.
+           Greeting Crousel
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded-full text-lg shadow-md transition">
               Start Your Journey
             </button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold py-3 px-6 rounded-full text-lg transition">
-              View Packages
+              Customise your Package
             </button>
           </div>
         </div>
