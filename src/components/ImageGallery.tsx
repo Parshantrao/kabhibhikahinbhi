@@ -40,9 +40,9 @@ const ImageGallery = () => {
     // { id: 11, src: imgUttr1, category: 'uttarakhand', title: 'Uttr 1', location: 'Uttarakhand' },
     // { id: 12, src: imgUttr2, category: 'uttarakhand', title: 'Uttr 2', location: 'Uttarakhand' },
     // { id: 13, src: imgUttr3, category: 'uttarakhand', title: 'Uttr 3', location: 'Uttarakhand' },
-  { id: 11, src: RajasthanPkg, category: 'uttarakhand', title: 'View Packages', location: 'Jaipur | Jodhpur | Jaisalmer | Udaipur | Others' },
-{ id: 12, src: UttrakhandPkg, category: 'uttarakhand', title: 'View Packages', location: 'Mussoorie | Rishikesh | Valley of Flowers | Chopta | Chakrata | Others' },
-{ id: 13, src: HimachalPkg, category: 'uttarakhand', title: 'View Packages', location: 'Jibhi | Shimla | Bir Billing | Dalhousie | McLeod Ganj | Spiti | Others' },
+    { id: 11, src: RajasthanPkg, category: 'uttarakhand', title: 'View Packages', location: 'Jaipur | Jodhpur | Jaisalmer | Udaipur | Others' },
+    { id: 12, src: UttrakhandPkg, category: 'uttarakhand', title: 'View Packages', location: 'Mussoorie | Rishikesh | Valley of Flowers | Chopta | Chakrata | Others' },
+    { id: 13, src: HimachalPkg, category: 'uttarakhand', title: 'View Packages', location: 'Jibhi | Shimla | Bir Billing | Dalhousie | McLeod Ganj | Spiti | Others' },
 
 
   ];
@@ -71,16 +71,26 @@ const ImageGallery = () => {
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map(category => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-medium transition-colors ${selectedCategory === category.id
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  }`}
-              >
-                {category.name}
-              </button>
+             <button
+  key={category.id}
+  onClick={
+    category.name === "Add your Destination"
+      ? () => {
+          setTimeout(() => {
+            document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+          }, 200); // 200ms delay
+        }
+      : undefined // or another fallback handler
+  }
+  className={`px-6 py-3 rounded-full font-medium transition-colors ${
+    selectedCategory === category.id
+      ? "bg-blue-600 text-white"
+      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+  }`}
+>
+  {category.name}
+</button>
+
             ))}
           </div>
         </div>

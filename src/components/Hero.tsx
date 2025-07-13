@@ -7,6 +7,35 @@ import 'swiper/css/autoplay';
 import img1 from '../assets/images/DSCN1223.JPG';
 import img2 from '../assets/images/Laxmangarh.jpg';
 import img4 from '../assets/images/sunset.jpg';
+import img3 from '../assets/website wallpaper.jpg'
+
+const scrollToSection = (id: string, duration = 1500) => {
+  const target = document.querySelector(id);
+  if (!target) return;
+
+  const start = window.pageYOffset;
+  const end = (target as HTMLElement).offsetTop;
+  const distance = end - start;
+  let startTime: number | null = null;
+
+  const easeInOutQuad = (t: number) =>
+    t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+  const step = (timestamp: number) => {
+    if (!startTime) startTime = timestamp;
+    const timeElapsed = timestamp - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const ease = easeInOutQuad(progress);
+    window.scrollTo(0, start + distance * ease);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(step);
+    }
+  };
+
+  requestAnimationFrame(step);
+};
+
 
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +52,7 @@ const Hero = () => {
         allowTouchMove={false}
         className="absolute inset-0 z-0 pointer-events-none"
       >
-        {[img2, img4].map((img, idx) => (
+        {[img3].map((img, idx) => (
           <SwiperSlide key={idx}>
             <img
               src={img}
@@ -80,18 +109,62 @@ const Hero = () => {
       {/* ===== Hero Content ===== */}
       <div className="relative z-20 flex items-center justify-center h-full px-4">
         <div className="text-center max-w-3xl">
-          <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 drop-shadow-xl font-poppins animate-fade-in">
+          <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-6 bg-clip-text  to-yellow-500 drop-shadow-xl font-poppins animate-fade-in">
             Kabhi Bhi Kahin Bhi
           </h1>
 
-          <p className="text-lg md:text-2xl text-blue-100 mb-8 drop-shadow">
-           Greeting Crousel
-          </p>
+          <div className="mb-8 text-xl md:text-3xl font-bold drop-shadow-lg">
+            <Swiper
+              modules={[Autoplay]}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
+              loop={true}
+              allowTouchMove={false}
+              slidesPerView={1}
+              className="max-w-xl"
+            >
+              {[
+                "Khamma Ghani",
+                "Vanakkam",
+                "Namaskaram",
+                "Sat Sri Akal",
+                "Johar",
+                "Ram Ram",
+                "Namaskar",
+                "Kem Cho",
+                "Jai Johar",
+                "Tashi Delek",
+                "Nomoskar",
+                "Namaste",
+                "Khurumjari",
+                "Khublei",
+                "Chibai",
+                "Jai Hind",
+                "Hello"
+              ].map((greeting, idx) => (
+                <SwiperSlide key={idx}>
+                  <div className="text-center font-poppins bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent animate-pulse">
+                    {greeting}
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+
+
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded-full text-lg shadow-md transition">
+            <button
+              onClick={() => scrollToSection("#gallery", 1500)}
+              className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded-full text-lg shadow-md transition"
+            >
               Start Your Journey
             </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold py-3 px-6 rounded-full text-lg transition">
+
+            <button
+              onClick={() => scrollToSection("#contact", 1500)}
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold py-3 px-6 rounded-full text-lg transition"
+            >
               Customise your Package
             </button>
           </div>
