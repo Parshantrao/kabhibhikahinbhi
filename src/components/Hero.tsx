@@ -1,13 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import img1 from '../assets/images/DSCN1223.JPG';
-import img2 from '../assets/images/Laxmangarh.jpg';
-import img4 from '../assets/images/sunset.jpg';
-import img3 from '../assets/website wallpaper.jpg'
+import img3 from '../assets/website wallpaper.jpg';
+import img4 from '../assets/website wallpaper1.jpg';
 
 const scrollToSection = (id: string, duration = 1500) => {
   const target = document.querySelector(id);
@@ -36,35 +30,16 @@ const scrollToSection = (id: string, duration = 1500) => {
   requestAnimationFrame(step);
 };
 
-
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden text-white font-sans">
-
-      {/* ===== Carousel Background ===== */}
-      <Swiper
-        modules={[Autoplay]}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        loop={true}
-        slidesPerView={1}
-        allowTouchMove={false}
-        className="absolute inset-0 z-0 pointer-events-none"
-      >
-        {[img3].map((img, idx) => (
-          <SwiperSlide key={idx}>
-            <img
-              src={img}
-              alt={`Slide ${idx + 1}`}
-              className="w-full h-screen object-cover"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
+    <div
+      className="relative h-screen w-full bg-cover bg-center text-white font-sans"
+      style={{ backgroundImage: `url(${img4})` }}
+    >
       {/* ===== Dark Overlay ===== */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-black bg-opacity-50 z-10" />
 
       {/* ===== Navigation Bar ===== */}
       <nav className="absolute top-0 left-0 right-0 px-6 py-4 z-30">
@@ -73,7 +48,9 @@ const Hero = () => {
             <div className="w-12 h-12 rounded-full flex items-center justify-center shadow-md">
               <img src="/logo1.png" alt="Logo" className="w-10 h-10" />
             </div>
-            <span className="text-white font-semibold text-xl tracking-wide">Sktti Tours & Travels</span>
+            <span className="text-white font-semibold text-xl tracking-wide">
+              Sktti Tours & Travels
+            </span>
           </div>
 
           {/* Desktop Menu */}
@@ -86,10 +63,7 @@ const Hero = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -109,49 +83,13 @@ const Hero = () => {
       {/* ===== Hero Content ===== */}
       <div className="relative z-20 flex items-center justify-center h-full px-4">
         <div className="text-center max-w-3xl">
-          <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-6 bg-clip-text  to-yellow-500 drop-shadow-xl font-poppins animate-fade-in">
+          <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-xl font-poppins animate-fade-in">
             Kabhi Bhi Kahin Bhi
           </h1>
 
-          <div className="mb-8 text-xl md:text-3xl font-bold drop-shadow-lg">
-            <Swiper
-              modules={[Autoplay]}
-              autoplay={{ delay: 2000, disableOnInteraction: false }}
-              loop={true}
-              allowTouchMove={false}
-              slidesPerView={1}
-              className="max-w-xl"
-            >
-              {[
-                "Khamma Ghani",
-                "Vanakkam",
-                "Namaskaram",
-                "Sat Sri Akal",
-                "Johar",
-                "Ram Ram",
-                "Namaskar",
-                "Kem Cho",
-                "Jai Johar",
-                "Tashi Delek",
-                "Nomoskar",
-                "Namaste",
-                "Khurumjari",
-                "Khublei",
-                "Chibai",
-                "Jai Hind",
-                "Hello"
-              ].map((greeting, idx) => (
-                <SwiperSlide key={idx}>
-                  <div className="text-center font-poppins bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent animate-pulse">
-                    {greeting}
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+          <div className="mb-8 text-xl md:text-3xl font-bold drop-shadow-lg text-yellow-300 animate-pulse">
+            Welcome to Sktti Tours & Travels
           </div>
-
-
-
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
